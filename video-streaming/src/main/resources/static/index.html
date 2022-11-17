@@ -22,22 +22,22 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <video id="video" width="640" height="480" controls autoplay></video>
+                <video id="video" width="640" height="480" src="/video" controls autoplay></video>
             </div>
         </div>
     </div>
     <script>
-        var video = document.getElementById('video');
-        var stompClient = null;
-        var socket = new SockJS('/video');
-        stompClient = Stomp.over(socket);
-        stompClient.connect({}, function (frame) {
-            console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/video', function (message) {
-                var blob = new Blob([message.body], {type: 'video/mp4'});
-                video.src = window.URL.createObjectURL(blob);
-            });
-        });
+        // var video = document.getElementById('video');
+        // var stompClient = null;
+        // var socket = new SockJS('/video');
+        // stompClient = Stomp.over(socket);
+        // stompClient.connect({}, function (frame) {
+        //     console.log('Connected: ' + frame);
+        //     stompClient.subscribe('/topic/video', function (message) {
+        //         var blob = new Blob([message.body], {type: 'video/mp4'});
+        //         video.src = window.URL.createObjectURL(blob);
+        //     });
+        // });
     </script>
 </body>
 
