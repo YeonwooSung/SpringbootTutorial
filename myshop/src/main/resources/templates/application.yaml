@@ -1,0 +1,9 @@
+spring:
+    profiles:
+        default: local
+    lifecycle:
+        timeout-per-shutdown-phase: 35s # 기본값은 30s 이다.
+
+server:
+    port: 9090
+    shutdown: graceful  # graceful shutdown 적용 (immediate 옵션도 존재하는 해당 옵션은 디폴트이며 말 그대로 즉시 종료이다.)
