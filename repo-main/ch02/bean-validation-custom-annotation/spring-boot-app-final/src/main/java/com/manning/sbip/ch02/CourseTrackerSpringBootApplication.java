@@ -47,6 +47,5 @@ public class CourseTrackerSpringBootApplication implements CommandLineRunner {
         violations = validator.validate(user4);
         logger.error("Password for user4 violates special character rule");
         violations.forEach(constraintViolation -> logger.error("Violation details: [{}].", constraintViolation.getMessage()));
-
     }
 }

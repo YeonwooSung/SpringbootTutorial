@@ -28,13 +28,10 @@ public class PasswordRuleValidator implements ConstraintValidator<Password, Stri
                         new CharacterRule(EnglishCharacterData.Digit,MIN_DIGIT_CASE_CHARS));
         passwordRules.add(characterCharacteristicsRule);
         passwordRules.add(new RepeatCharacterRegexRule(MAX_REPETITIVE_CHARS));
+
         PasswordValidator passwordValidator = new PasswordValidator(passwordRules);
         PasswordData passwordData = new PasswordData(password);
         RuleResult ruleResult = passwordValidator.validate(passwordData);
         return ruleResult.isValid();
-
-
-
-
     }
 }
